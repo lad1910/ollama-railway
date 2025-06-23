@@ -1,12 +1,5 @@
 #!/bin/bash
-set -e
+echo "Starting Ollama on port ${PORT:-11434}..."
 
-echo "Starting Ollama service..."
-
-# Set CPU-only mode for Railway
-export OLLAMA_NUM_PARALLEL=1
-export OLLAMA_MAX_LOADED_MODELS=1
-export OLLAMA_FLASH_ATTENTION=false
-
-# Start Ollama server in foreground (not background)
-exec ollama serve
+# Start Ollama with Railway's port
+exec ollama serve --host 0.0.0.0:${PORT:-11434}
