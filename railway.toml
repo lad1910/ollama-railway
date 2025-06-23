@@ -1,0 +1,10 @@
+[build]
+builder = "DOCKERFILE"
+
+[deploy]
+startCommand = "/start.sh"
+
+[env]
+OLLAMA_HOST = "0.0.0.0"
+OLLAMA_ORIGINS = "*"
+PORT = "11434"
